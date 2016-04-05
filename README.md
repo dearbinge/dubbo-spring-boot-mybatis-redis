@@ -2,6 +2,7 @@
 通过dubbo+spring boot+mybatis+redis等主流技术搭建成一套分布式服务框架
 
 项目介绍：
+
 1、首先安装zookeeper+redis；
 
 2、dearbinge-data-provider服务提供者项目的资源文件dubbo-spring-mybatis.xml下配置zookeeper地址；
