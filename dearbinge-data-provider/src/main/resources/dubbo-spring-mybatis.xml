@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context    http://www.springframework.org/schema/context/spring-context-4.0.xsd   
+	http://code.alibabatech.com/schema/dubbo         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!-- 提供方应用信息，用于计算依赖关系 -->
+	<dubbo:application name="dearbinge-parkingspot-provider" />
+
+	<!-- 使用multicast广播注册中心暴露服务地址 -->
+	<dubbo:registry protocol="zookeeper" address="192.168.1.118:2181" />
+	<!-- 用dubbo协议在20880端口暴露服务 -->
+	<dubbo:protocol name="dubbo" port="20880" />
+
+	<!-- mybatis 相关 -->
+	<import resource="spring-mybatis.xml" />
+
+	<!-- 使用注解方式暴露接口 -->
+	<!-- <dubbo:annotation package="com.dearbinge.data" /> -->
+
+	<!-- 加入spring注解扫描 -->
+	<context:component-scan base-package="com.dearbinge.data" />
+
+	<!-- xml 配置文件， 对外发布的service接口部分 -->
+	<import resource="dubbo-services.xml" />
+
+</beans>

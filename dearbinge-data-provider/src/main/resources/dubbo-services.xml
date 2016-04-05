@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context    http://www.springframework.org/schema/context/spring-context-4.0.xsd   
+	http://code.alibabatech.com/schema/dubbo         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<!-- 声明需要暴露的服务接口 -->
+	<dubbo:service interface="com.dearbinge.data.api.SecurityService"
+		ref="securityService" protocol="dubbo" timeout="100000" retries="0" />
+</beans>
