@@ -3,10 +3,15 @@
 
 项目介绍：
 1、首先安装zookeeper+redis；
+
 2、dearbinge-data-provider服务提供者项目的资源文件dubbo-spring-mybatis.xml下配置zookeeper地址；
+
 3、dearbinge-openapi服务消费者的资源文件dubbo-services.xml下配置zookeeper地址，然后在application.properties下配置redis地址；
+
 4、dearbinge-security服务消费者的资源文件dubbo-services.xml下配置zookeeper地址；
+
 5、建立数据库文件cloudplate，创建`t_security`表单元素
+
 脚本如下：
 /*
 Navicat MySQL Data Transfer
@@ -48,6 +53,9 @@ CREATE TABLE `t_security` (
 -- Records of t_security
 -- ----------------------------
 INSERT INTO `t_security` VALUES ('0eca8f5373ca4866aec2f8e9d9367104', '14318527b13840c2a4af63fef52c2d6e', '323202320202201509080001', '1', '1', null, null, null, null, '????');
+
 6、启动dearbinge-data-provider项目下的mainloader注册服务提供者；
+
 7、启动dearbinge-openapi项目下的App注册服务消费者；
+
 8、整个项目即可完整运行。
